@@ -65,8 +65,26 @@
 		<dependency>
    			<groupId>org.apache.commons</groupId>
     		<artifactId>commons-lang3</artifactId>
-    		<version>3.12.0</version>
 		</dependency>
+		
+		<dependency>
+	    	<groupId>org.hamcrest</groupId>
+	    	<artifactId>hamcrest-library</artifactId>
+	    	<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.jayway.jsonpath</groupId>
+		    <artifactId>json-path</artifactId>
+		    <scope>test</scope>
+		    
+		</dependency>
+			<dependency>
+    		<groupId>com.google.code.gson</groupId>
+    		<artifactId>gson</artifactId>
+    		<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -77,5 +95,23 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>desarrollo</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<activatedProperties>desarrollo</activatedProperties>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<activatedProperties>test</activatedProperties>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>

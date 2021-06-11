@@ -30,12 +30,14 @@ public class Reporte {
 	@Column(name = "ID_SERVICIO")
 	private String idServicio;
 	
-	@Column(name = "FECHA_INICIO", columnDefinition="timestamptz")
+//	@Column(name = "FECHA_INICIO", columnDefinition="timestamptz")
+	@Column(name = "FECHA_INICIO") // para test de integración
 	@DateTimeFormat(pattern="yyyy-MM-dd'T'hh:mm")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaInicio;
 	
-	@Column(name = "FECHA_FIN", columnDefinition="timestamptz")
+//	@Column(name = "FECHA_FIN", columnDefinition="timestamptz")  para desarrollo
+	@Column(name = "FECHA_FIN") //para test de integración
 	@DateTimeFormat(pattern="yyyy-MM-dd'T'hh:mm")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaFin;
